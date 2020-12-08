@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<userprofile>
+    <firstname>Anh</firstname>
+    <lastname>Cao</lastname>
+    <password>strongPassword</password>
+    <email>caoanhquan_qn@yahoo.com</email>
+    <picture location="servername/filename">Profile Picture</picture>
+</userprofile>
