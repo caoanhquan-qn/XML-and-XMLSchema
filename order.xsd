@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/order" xmlns:tns="http://www.example.org/order" elementFormDefault="qualified">
-    <element name="order" type="tns:product" />
+    <element name="order" type="tns:order" />
+    <complexType name="order">
+        <sequence>
+            <element name="customer" type="tns:customer" />
+            <element name="product" type="tns:product" minOccurs="1" maxOccurs="unbounded"></element>
+        </sequence>
+    </complexType>
+
+    <complexType name="customer">
+        <all>
+            <element name="name" type="string" />
+            <element name="phone" type="string" minOccurs="0" />
+        </all>
+    </complexType>
+
     <complexType name="product">
         <sequence>
             <element name="name" type="tns:String20Chars"></element>
@@ -26,5 +40,4 @@
             <enumeration value="shoes" />
         </restriction>
     </simpleType>
-
 </schema>
