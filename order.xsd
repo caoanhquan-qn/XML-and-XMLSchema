@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/order" xmlns:tns="http://www.example.org/order" elementFormDefault="qualified">
+    <element name="order" type="tns:product" />
+    <complexType name="product">
+        <sequence>
+            <element name="name" type="tns:String20Chars"></element>
+            <element name="description" type="tns:String100Chars"></element>
+            <element name="price" type="int"></element>
+            <element name="category" type="tns:category"></element>
+        </sequence>
+    </complexType>
+    <simpleType name="String20Chars">
+        <restriction base="string">
+            <maxLength value="20"></maxLength>
+        </restriction>
+    </simpleType>
+    <simpleType name="String100Chars">
+        <restriction base="string">
+            <maxLength value="100"></maxLength>
+        </restriction>
+    </simpleType>
+    <simpleType name="category">
+        <restriction base="string">
+            <enumeration value="electronics" />
+            <enumeration value="books" />
+            <enumeration value="shoes" />
+        </restriction>
+    </simpleType>
+
+</schema>
