@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/Patient"
+	xmlns:tns="http://www.example.org/Patient"
+	xmlns:common="http://www.example.org/Common"
+	elementFormDefault="qualified">
+	<include schemaLocation="PaymentType.xsd" />
+	<import schemaLocation="Common.xsd" namespace="http://www.example.org/Common" />
+	<element name="Patient" type="tns:Patient" />
+	<complexType name="Patient">
+		<sequence>
+			<element name="name" type="tns:String15Chars"></element>
+			<element name="age" type="int"></element>
+			<element name="email" type="string" minOccurs="0"></element>
+			<element name="gender" type="tns:Gender"></element>
+			<element name="phone" type="string" maxOccurs="3"></element>
+			<element name="PaymentType" type="tns:PaymentType"></element>
+		</sequence>
+		<attribute name="ID" type="common:id" use="required" />
+	</complexType>
+	<simpleType name="String15Chars">
+		<restriction base="string">
+			<maxLength value="15"></maxLength>
+		</restriction>
+	</simpleType>
+	<simpleType name="Gender">
+		<restriction base="string">
+			<enumeration value="Male" />
+			<enumeration value="Female" />
+		</restriction>
+	</simpleType>
+</schema>

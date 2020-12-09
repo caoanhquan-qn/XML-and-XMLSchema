@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/Patient"
+	xmlns:tns="http://www.example.org/Patient"
+	elementFormDefault="qualified">
+	<complexType name="PaymentType">
+		<choice>
+			<element name="cash" type="decimal" />
+			<element name="insurance" type="tns:Insurance" />
+		</choice>
+	</complexType>
+	<complexType name="Insurance">
+		<all>
+			<element name="limit" type="decimal" />
+			<element name="provider" type="string" />
+		</all>
+	</complexType>
+</schema>
