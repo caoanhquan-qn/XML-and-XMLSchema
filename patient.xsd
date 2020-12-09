@@ -1,16 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Patient" xmlns:tns="http://www.example.org/Patient" elementFormDefault="qualified">
-    <element name="Patient" type="tns:Patient"/>
-        <complexType name="Patient">
-            <sequence>
-                <element name="name" type="string"></element>
-                <element name="age" type="int"></element>
-                <element name="email" type="string"></element>
-                <element name="gender" type="string"></element>
-                <element name="phone" type="string"></element>
-            </sequence>
-        </complexType>
-    
-   
+    <element name="Patient" type="tns:Patient" />
+    <complexType name="Patient">
+        <sequence>
+            <element name="name" type="tns:String15Chars"></element>
+            <element name="age" type="int"></element>
+            <element name="email" type="string" minOccurs="0"></element>
+            <element name="gender" type="tns:Gender"></element>
+            <element name="phone" type="string" maxOccurs="3"></element>
+            <element name="PaymentType" type="tns:PaymentType"></element>
+        </sequence>
+    </complexType>
+    <complexType name="PaymentType">
+        <choice>
+            <element name="cash" type="decimal" />
+            <element name="insurance" type="tns:Insurance" />
 
+        </choice>
+
+    </complexType>
+    <complexType name="Insurance">
+        <all>
+            <element name="limit" type="decimal" />
+            <element name="provider" type="string" />
+        </all>
+    </complexType>
+    <simpleType name="String15Chars">
+        <restriction base="string">
+            <maxLength value="15"></maxLength>
+        </restriction>
+    </simpleType>
+    <simpleType name="Gender">
+        <restriction base="string">
+            <enumeration value="Male" />
+            <enumeration value="Female" />
+        </restriction>
+    </simpleType>
 </schema>
