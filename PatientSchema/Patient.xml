@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Patient ID="302563"
+	xmlns:tns="http://www.example.org/Patient"
+	xmlns:tns1="http://www.example.org/Common"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/Patient Patient.xsd ">
+	<tns:name>Nick</tns:name>
+	<tns:age>31</tns:age>
+	<tns:gender>Male</tns:gender>
+	<tns:phone>0424506789</tns:phone>
+	<tns:PaymentType>
+		<!-- <tns:cash>3000</tns:cash> -->
+		<tns:insurance>
+			<tns:limit>4000</tns:limit>
+			<tns:provider>Bupa</tns:provider>
+		</tns:insurance>
+	</tns:PaymentType>
+</tns:Patient>
