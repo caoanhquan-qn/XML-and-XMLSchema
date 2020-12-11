@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DriverLicense status="suspended">
+    <Number>12345</Number>
+    <FirstName>John</FirstName>
+    <LastName>Tran</LastName>
+    <DateOfBirth>15-July-1993</DateOfBirth>
+    <VehicleType>Car</VehicleType>
+    <DateOfIssue>11-June-2018</DateOfIssue>
+    <![CDATA[ 
+    DriverLicense XML
+    ]]>
+    <ExpiryDate>11-June-2028</ExpiryDate>
+    <Photo location="servername/filename" />
+    <Address>
+        <street>Longfield St</street>
+        <city>Granville</city>
+        <state>NSW</state>
+        <country>Australia</country>
+        <zipcode>2152</zipcode>
+    </Address>
+</DriverLicense>
