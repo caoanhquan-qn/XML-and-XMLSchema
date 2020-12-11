@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE student SYSTEM "student.dtd" >
+<student year="2020">
+  <name>John</name>
+  <score result="high distinction">86</score>
+</student>

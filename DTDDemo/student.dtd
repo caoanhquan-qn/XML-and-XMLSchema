@@ -1,0 +1,6 @@
+<!ELEMENT student (name, score)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT score (#PCDATA)>
+<!ATTLIST student year CDATA #FIXED "2020">
+<!ATTLIST student gender CDATA #IMPLIED>
+<!ATTLIST score result CDATA #REQUIRED>
